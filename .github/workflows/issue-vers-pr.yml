@@ -1,0 +1,62 @@
+name: Proposition vers pull request
+
+on:
+  issues:
+    types: [opened, edited]
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+concurrency:
+  group: issue-${{ github.event.issue.number }}
+  cancel-in-progress: true
+
+jobs:
+  creer-fiche:
+    if: github.event.issue.state == 'open' && contains(github.event.issue.labels.*.name, 'ajout')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install pyyaml
+
+      - name: Créer la fiche depuis l'issue
+        id: fiche
+        env:
+          # Le contenu de l'issue est passé par variable d'environnement, jamais interpolé dans le script
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          MESSAGE_FILE: ${{ runner.temp }}/message.md
+        run: python scripts/issue_vers_fiche.py
+
+      - name: Ouvrir ou mettre à jour la pull request
+        id: pr
+        if: steps.fiche.outputs.statut == 'ok'
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: ajout/issue-${{ github.event.issue.number }}
+          add-paths: newsletters/${{ steps.fiche.outputs.slug }}.yml
+          commit-message: "ajout: ${{ steps.fiche.outputs.nom }}"
+          title: "Ajout : ${{ steps.fiche.outputs.nom }}"
+          body: |
+            Fiche générée automatiquement à partir de #${{ github.event.issue.number }}.
+
+            Closes #${{ github.event.issue.number }}
+          labels: ajout
+
+      - name: Préparer le message de succès
+        if: steps.fiche.outputs.statut == 'ok'
+        env:
+          MESSAGE_FILE: ${{ runner.temp }}/message.md
+          PR_URL: ${{ steps.pr.outputs.pull-request-url }}
+        run: |
+          printf '✅ Merci ! La fiche a été créée et passe la validation : %s\n\nElle sera publiée dès que la pull request aura été relue et fusionnée.\n' "$PR_URL" > "$MESSAGE_FILE"
+
+      - name: Commenter l'issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+          NUMERO: ${{ github.event.issue.number }}
+        run: gh issue comment "$NUMERO" --repo "$GITHUB_REPOSITORY" --body-file "${{ runner.temp }}/message.md"

@@ -4,7 +4,7 @@ Merci de vouloir enrichir le répertoire ! Il y a trois façons de contribuer, d
 
 ## 1. Proposer une newsletter sans toucher au code
 
-Remplissez le [formulaire d'ajout](../../issues/new?template=ajout-newsletter.yml). Une personne qui maintient le projet créera la fiche pour vous.
+Remplissez le [formulaire d'ajout](../../issues/new?template=ajout-newsletter.yml). La fiche est créée automatiquement à partir de vos réponses, puis proposée en relecture. Un commentaire sur votre issue vous indique le résultat en moins d'une minute. S'il y a une erreur, modifiez simplement votre issue : la vérification se relance.
 
 ## 2. Ajouter une fiche directement depuis GitHub (sans installer quoi que ce soit)
 
