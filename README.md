@@ -12,7 +12,7 @@ Un répertoire ouvert et collaboratif des newsletters tech en français : dével
 
 - **[Human Coders News](https://news.humancoders.com/)** : Les meilleures actus dev de la communauté Human Coders News, qui a partagé plus de 20 000 liens depuis 2011 : langages, front, DevOps, IA, open source. Chaque jeudi matin. _(hebdomadaire, par Human Coders)_
 - **[Quoi de neuf les devs ?](https://quoi-de-neuf-les-devs.happyto.dev/)** : Veille dev hebdo en français : actus, articles, vidéos, podcasts, interviews et offres d’emploi. Contenu bonus pour les abonnés payants. _(hebdomadaire, par Frédéric Blanc (HappyToDev))_
-- **[Still D.R.E.Y](https://dredrey.kessel.media)** : Sélection d'articles tech par Audrey Droyen. (Je ne suis pas l'auteure, seulement une lectrice fan) _(mensuelle, par Audrey Droyen)_
+- **[Still D.R.E.Y](https://dredrey.kessel.media)** : Sélection d'articles tech par Audrey Droyen. _(mensuelle, par Audrey Droyen)_
 - **[Veille techno de Camille Roux](https://www.camilleroux.com/veille/)** : Sélection d’articles, outils et projets lus et commentés à la main : dev, IA et LLM, cybersécurité, open source, entrepreneuriat tech. _(hebdomadaire, par Camille Roux, cofondateur de Human Coders)_
 
 ### DevOps & cloud
