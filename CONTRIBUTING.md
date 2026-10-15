@@ -8,23 +8,53 @@ Remplissez le [formulaire d'ajout](../../issues/new?template=ajout-newsletter.ym
 
 ## 2. Ajouter une fiche directement depuis GitHub (sans installer quoi que ce soit)
 
-1. Ouvrez le dossier [`newsletters/`](newsletters/) et cliquez sur **Add file → Create new file**.
-2. Nommez le fichier `<slug>.yml` : nom de la newsletter en minuscules, sans accents, mots séparés par des tirets (ex. `la-veille-du-dev.yml`).
-3. Copiez le contenu de [`_modele.yml`](newsletters/_modele.yml) et remplissez-le.
-4. Cliquez sur **Commit changes** puis **Propose changes** : GitHub crée automatiquement un fork et une pull request.
+Il vous faut seulement un compte GitHub.
 
-Une vérification automatique s'exécute sur votre pull request. Si elle échoue, cliquez sur **Details** pour voir ce qu'il faut corriger.
+1. Ouvrez le dossier [`newsletters/`](newsletters/) et cliquez sur **Add file → Create new file**.
+2. GitHub indique que vous devez créer une copie du projet (un *fork*) pour proposer des modifications. Cliquez sur **Fork this repository**. L'éditeur s'ouvre ensuite dans votre copie.
+3. Dans le champ du nom, tapez `<slug>.yml` : nom de la newsletter en minuscules, sans accents, mots séparés par des tirets (ex. `la-veille-du-dev.yml`). Vérifiez que le chemin affiché commence bien par `newsletters/`.
+4. Copiez le contenu de [`_modele.yml`](newsletters/_modele.yml) dans l'éditeur et remplissez-le.
+5. Cliquez sur **Commit changes…**, gardez ou modifiez le message, puis cliquez sur **Propose changes**.
+6. GitHub affiche une page de comparaison de vos changements. Cliquez sur **Create pull request**, puis encore une fois sur **Create pull request** pour valider. Tant que vous n'avez pas fait cette étape, votre proposition n'est pas envoyée.
+
+Une vérification automatique s'exécute ensuite sur votre pull request. Si elle échoue (croix rouge ❌), cliquez sur **Details** pour voir ce qu'il faut corriger. Pour corriger, ouvrez l'onglet **Files changed** de la pull request, puis **⋯ → Edit file** : vos modifications s'ajoutent directement à la même pull request.
 
 ## 3. En local
 
-```bash
-git clone git@github.com:<votre-compte>/newsletters-tech-fr.git
-cd newsletters-tech-fr
-pip install pyyaml
-cp newsletters/_modele.yml newsletters/ma-newsletter.yml
-# éditez la fiche, puis :
-python scripts/build.py validate
-```
+Prérequis : `git` et Python 3.
+
+1. **Forkez le projet** : en haut de la page du dépôt, cliquez sur **Fork**, puis sur **Create fork**. Vous obtenez votre propre copie : `github.com/<votre-compte>/newsletters-tech-fr`.
+
+2. **Clonez votre fork** et créez une branche :
+
+   ```bash
+   git clone https://github.com/<votre-compte>/newsletters-tech-fr.git
+   cd newsletters-tech-fr
+   git switch -c ajout-ma-newsletter
+   ```
+
+   Si vous avez configuré une clé SSH sur GitHub, vous pouvez utiliser `git@github.com:<votre-compte>/newsletters-tech-fr.git` à la place.
+
+3. **Créez et validez la fiche** :
+
+   ```bash
+   cp newsletters/_modele.yml newsletters/ma-newsletter.yml
+   # éditez la fiche, puis :
+   python3 -m pip install pyyaml
+   python3 scripts/build.py validate
+   ```
+
+4. **Envoyez-la sur votre fork** :
+
+   ```bash
+   git add newsletters/ma-newsletter.yml
+   git commit -m "ajout: Ma Newsletter"
+   git push -u origin ajout-ma-newsletter
+   ```
+
+5. **Ouvrez la pull request** : sur la page de votre fork, GitHub affiche un bandeau **Compare & pull request**. Cliquez dessus, puis sur **Create pull request**.
+
+Pour une contribution suivante, mettez d'abord votre fork à jour : bouton **Sync fork** sur sa page GitHub, puis `git switch main && git pull` en local, avant de créer une nouvelle branche.
 
 Ne modifiez pas la liste dans le `README.md` : elle est régénérée automatiquement après chaque fusion.
 
