@@ -17,12 +17,16 @@ Un répertoire ouvert et collaboratif des newsletters tech en français : dével
 
 - **[RudeOps](https://www.rudeops.com/)** : Veille tech et DevOps indépendante au ton décalé : Kubernetes, CI/CD, observabilité, IA… La version mail ajoute citations et bonus absents des archives. _(hebdomadaire, par Cyril Beaufrère)_
 
+### Open source
+
+- **[Lettre d’information du CNLL](https://cnll.fr/)** : Newsletter mensuelle du CNLL, qui représente les entreprises du logiciel libre en France : actualités, prises de position publiques, publications, événements (Acteurs du Libre, OSXP) _(mensuelle, par CNLL)_
+
 ### Tech généraliste
 
 - **[Cybernetica](https://www.cybernetica.fr/tag/newsletter/)** : Essais sur la tech, la souveraineté numérique, l’IA et la cybersécurité. La plupart des éditions récentes sont réservées aux abonnés payants. _(hebdomadaire, par Tariq Krim)_
 - **[Repost_](https://repost.hypotheses.org/liste-de-diffusion)** : Blog du Centre Internet et Société du CNRS : analyses, extraits et vidéos de chercheurs sur l’IA et le numérique dans la société (éducation, politique, création, santé). _(irreguliere, par Centre Internet et Société (CIS) du CNRS, éditorial coordonné par Charline Zeitoun)_
 
-_5 newsletters référencées._
+_6 newsletters référencées._
 <!-- LISTE:FIN -->
 
 ## Contribuer
