@@ -23,17 +23,17 @@ Une vérification automatique s'exécute ensuite sur votre pull request. Si elle
 
 Prérequis : `git` et Python 3.
 
-1. **Forkez le projet** : en haut de la page du dépôt, cliquez sur **Fork**, puis sur **Create fork**. Vous obtenez votre propre copie : `github.com/<votre-compte>/newsletters-tech-fr`.
+1. **Forkez le projet** : en haut de la page du dépôt, cliquez sur **Fork**, puis sur **Create fork**. Vous obtenez votre propre copie : `github.com/<votre-compte>/newsletters-tech-fr-a-la-french`.
 
 2. **Clonez votre fork** et créez une branche :
 
    ```bash
-   git clone https://github.com/<votre-compte>/newsletters-tech-fr.git
-   cd newsletters-tech-fr
+   git clone https://github.com/<votre-compte>/newsletters-tech-fr-a-la-french.git
+   cd newsletters-tech-fr-a-la-french
    git switch -c ajout-ma-newsletter
    ```
 
-   Si vous avez configuré une clé SSH sur GitHub, vous pouvez utiliser `git@github.com:<votre-compte>/newsletters-tech-fr.git` à la place.
+   Si vous avez configuré une clé SSH sur GitHub, vous pouvez utiliser `git@github.com:<votre-compte>/newsletters-tech-fr-a-la-french.git` à la place.
 
 3. **Créez et validez la fiche** :
 

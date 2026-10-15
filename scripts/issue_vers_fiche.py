@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Crée une fiche dans newsletters/ à partir d'une issue « Proposer une newsletter ».
 
-Lit le corps de l'issue dans la variable d'environnement ISSUE_BODY, écrit la fiche,
+Lit le corps de l'issue dans le fichier désigné par ISSUE_BODY_FILE, écrit la fiche,
 la valide avec build.py et écrit dans MESSAGE_FILE le commentaire à poster sur l'issue.
 Sorties GitHub Actions : `statut` (ok | erreur), `slug`, `nom`.
 """
@@ -86,7 +86,8 @@ def ecrire_sortie(**valeurs):
 def main():
     message = Path(os.environ["MESSAGE_FILE"])
     thematiques = build.charger_thematiques()
-    fiche, erreurs = construire_fiche(lire_sections(os.environ["ISSUE_BODY"]), thematiques)
+    corps = Path(os.environ["ISSUE_BODY_FILE"]).read_text(encoding="utf-8")
+    fiche, erreurs = construire_fiche(lire_sections(corps), thematiques)
 
     slug = slugifier(fiche.get("nom", ""))
     if not slug:
