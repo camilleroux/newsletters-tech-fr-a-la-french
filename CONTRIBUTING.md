@@ -4,7 +4,7 @@ Merci de vouloir enrichir le répertoire ! Il y a trois façons de contribuer, d
 
 ## 1. Proposer une newsletter sans toucher au code
 
-Remplissez le [formulaire d'ajout](../../issues/new?template=ajout-newsletter.yml). Une personne qui maintient le projet créera la fiche pour vous.
+Remplissez le [formulaire d'ajout](../../issues/new?template=ajout-newsletter.yml). La fiche est créée automatiquement à partir de vos réponses, puis proposée en relecture. Un commentaire sur votre issue vous indique le résultat en moins d'une minute. S'il y a une erreur, modifiez simplement votre issue : la vérification se relance.
 
 ## 2. Ajouter une fiche directement depuis GitHub (sans installer quoi que ce soit)
 
@@ -23,17 +23,17 @@ Une vérification automatique s'exécute ensuite sur votre pull request. Si elle
 
 Prérequis : `git` et Python 3.
 
-1. **Forkez le projet** : en haut de la page du dépôt, cliquez sur **Fork**, puis sur **Create fork**. Vous obtenez votre propre copie : `github.com/<votre-compte>/newsletters-tech-fr`.
+1. **Forkez le projet** : en haut de la page du dépôt, cliquez sur **Fork**, puis sur **Create fork**. Vous obtenez votre propre copie : `github.com/<votre-compte>/newsletters-tech-fr-a-la-french`.
 
 2. **Clonez votre fork** et créez une branche :
 
    ```bash
-   git clone https://github.com/<votre-compte>/newsletters-tech-fr.git
-   cd newsletters-tech-fr
+   git clone https://github.com/<votre-compte>/newsletters-tech-fr-a-la-french.git
+   cd newsletters-tech-fr-a-la-french
    git switch -c ajout-ma-newsletter
    ```
 
-   Si vous avez configuré une clé SSH sur GitHub, vous pouvez utiliser `git@github.com:<votre-compte>/newsletters-tech-fr.git` à la place.
+   Si vous avez configuré une clé SSH sur GitHub, vous pouvez utiliser `git@github.com:<votre-compte>/newsletters-tech-fr-a-la-french.git` à la place.
 
 3. **Créez et validez la fiche** :
 
